@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         redux 3 testing
-        <Counter />
+        {/* <Counter /> */}
       </div>
     );
   }
