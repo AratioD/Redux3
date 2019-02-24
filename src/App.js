@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-    redux 3 testing
-    
+        redux 3 testing
       </div>
     );
   }
