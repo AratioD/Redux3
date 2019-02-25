@@ -13,7 +13,7 @@ class App extends Component {
       <div>
         {/* redux 3 testing */}
      
-        <Counter />
+        <Counter store={store} />
    
       </div>
     );
