@@ -1,23 +1,29 @@
+//counter components
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store/Counter';
 
-//counter components
 console.log('toimiiko component counter')
-const Counter = props => (
-  <div>
-    <h1>Counter</h1>
+function Counter(props) {
+    return (
+        <div>
+            <h1>Counter</h1>
 
-    <p>This is a simple example of a React component.</p>
+            <p>This is a simple example of a React component.</p>
 
-    <p>Current count: <strong>{props.count}</strong></p>
+            <p>Current count: <strong>{props.count}</strong></p>
 
-    <button onClick={props.increment}>Increment</button>
-  </div>
-);
+            <button onClick={props.increment}>Increment</button>
+        </div>
+    )
+}
 
-export default connect(
-  state => state.counter,
-  dispatch => bindActionCreators(actionCreators, dispatch)
-)(Counter);
+// console.log(store.getState())
+// const store = createStore(counterReducer)
+// export default connect(
+//   state => state.counter,
+//   dispatch => bindActionCreators(actionCreators, dispatch)
+// )(Counter);
+export default Counter;
+

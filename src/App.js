@@ -7,11 +7,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        redux 3 testing
-        {/* <Counter /> */}
+        {/* redux 3 testing */}
+        <Counter count={33} />
       </div>
     );
   }
 }
 
 export default App;
+ 
