@@ -1,12 +1,12 @@
 //counter components
 import React from 'react';
 import { connect } from 'react-redux';
-// import { actionCreators } from '../store/Counter';
-// import { bindActionCreators } from 'redux';
+import store from './../store/';
 
 console.log('toimiiko component counter')
 function Counter(props) {
     console.log(props)
+    console.log('store counter.js', store)
     return (
         <div>
             <h1>Counter</h1>
@@ -17,20 +17,13 @@ function Counter(props) {
     )
 }
 
-
 function mapStateToProps(state) {
     console.log('mapStateToProps', state)
     return {
         count: state.count
     }
 }
-// export default Counter;
+
+console.log('connect mapstatetoprops', connect(mapStateToProps)(Counter))
+
 export default connect(mapStateToProps)(Counter);
-
-
-// console.log(store.getState())
-// const store = createStore(counterReducer)
-// export default connect(
-//   state => state.counter,
-//   dispatch => bindActionCreators(actionCreators, dispatch)
-// )(Counter);

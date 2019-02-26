@@ -8,12 +8,13 @@ class App extends Component {
   
 
   render() {
-    console.log('store', store)
+    console.log('app store', store.getState())
+    console.log(store.getState().count)
     return (
       <div>
         {/* redux 3 testing */}
      
-        <Counter store={store} />
+        <Counter count={99} />
    
       </div>
     );
