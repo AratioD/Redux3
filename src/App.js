@@ -8,6 +8,7 @@ class App extends Component {
   
 
   render() {
+    // <Provider store={store}>
     console.log('app store', store.getState())
     console.log(store.getState().count)
     return (
@@ -18,7 +19,9 @@ class App extends Component {
    
       </div>
     );
+    // </Provider>
   }
+ 
 }
 
 export default App;

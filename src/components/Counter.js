@@ -17,8 +17,9 @@ function Counter(props) {
     )
 }
 
+// täällä on ongelma
 function mapStateToProps(state) {
-    console.log('mapStateToProps', state)
+    console.log('mapStateToProps', state);
     return {
         count: state.count
     }
