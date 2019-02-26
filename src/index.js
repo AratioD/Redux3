@@ -3,18 +3,17 @@ import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
-import noteReducer from './reducers/noteReducer'
-import filterReducer from './reducers/filterReducer'
+import countReducer from './reducers/countReducer'
 
 const reducer = combineReducers({
-    notes: noteReducer,
-    filter: filterReducer
+    count: countReducer,
 })
 
-
+console.log('reducer', reducer)
 const store = createStore(reducer)
 
 ReactDOM.render(
     <Provider store={store}>
         <App />
-    </Provider>, document.getElementById('root'))
+    </Provider>,
+    document.getElementById('root'))
