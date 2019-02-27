@@ -1,19 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { render } from 'react-dom' // changes
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import App from './App'
+import ConnectedCounter from './App'
 import countReducer from './reducers/countReducer'
 
 const reducer = combineReducers({
-    count: countReducer,
+    count: countReducer
 })
 
-console.log('reducer', reducer)
-const store = createStore(reducer)
+const store = createStore(countReducer)
 
-ReactDOM.render(
+console.log('count index.js', store.getState())
+// console.log('reducer index.js', store.getElementById())
+// store.subscribe(() => console.log('storen subscribe', store.getState()))
+
+render(
     <Provider store={store}>
-        <App />
+        <ConnectedCounter />,
     </Provider>,
-    document.getElementById('root'))
+document.getElementById('root'))
