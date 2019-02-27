@@ -3,10 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { countNumber } from '../reducers/countReducer'
 import { toggleImportanceOf } from '../reducers/countReducer'
+import { createStore } from 'redux'
 
 console.log('toimiiko component counter')
-function Counter({ store }) {
-    console.log('counter store', store)
+export function Counter({value}) {
+    // const notes = store.getState().initialState
+
+    console.log('counter store', value)
     // console.log('store counter.js', store.getState())
     return (
         <div>
@@ -19,14 +22,16 @@ function Counter({ store }) {
 }
 console.log('mapstatetoprops', mapStateToProps)
 
-// täällä on ongelma
-const mapStateToProps = (state) => {
-    console.log('mapStateToProps', state);
-    return {
-        count: state
-    }
-}
+// store.subscribe(() => {
+//     const storeNow = store.getState()
+//     console.log(storeNow)
+//   })
 
-// console.log('connect mapstatetoprops', connect(mapStateToProps)(Counter))
-const ConnectedCounter = connect()(Counter)
-export default ConnectedCounter;
+// täällä on ongelma
+const mapStateToProps = state => {
+    console.log('counter state',state)
+    return {value: state.value };
+  };
+
+  const List = connect(mapStateToProps)(Counter);
+  export default List;

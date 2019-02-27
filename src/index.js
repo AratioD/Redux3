@@ -13,11 +13,9 @@ const reducer = combineReducers({
 const store = createStore(countReducer)
 
 console.log('count index.js', store.getState())
-// console.log('reducer index.js', store.getElementById())
-// store.subscribe(() => console.log('storen subscribe', store.getState()))
 
 render(
     <Provider store={store}>
         <ConnectedCounter />,
     </Provider>,
-document.getElementById('root'))
+    document.getElementById('root'))
