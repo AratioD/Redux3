@@ -1,10 +1,5 @@
-//counter components
 import React from 'react';
 import { connect } from 'react-redux';
-// import { countNumber } from '../reducers/countReducer'
-// import { toggleImportanceOf } from '../reducers/countReducer'
-// import { createStore } from 'redux'
-
 
 class Counter extends React.Component {
   
@@ -19,14 +14,13 @@ class Counter extends React.Component {
             </div >
         )
     }
-
 }
 
 const mapStateToProps = state => {
     console.log('counter state', state)
     console.log('counter state 2', state.count)
     return {
-        count: state.value
+        count: state.count
     }
 }
 
