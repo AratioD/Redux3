@@ -1,6 +1,6 @@
 
 const initialState = {
-    count: 12233
+    count: 0
 };
 
 const countReducer = (state = initialState, action) => {
