@@ -10,19 +10,24 @@ class Counter extends React.Component {
                 <h1>Counter</h1>
                 <p>This is a simple example of a React component.</p>
                 <p>Current count: <strong>{this.props.count}</strong></p>
-                {/* <button onClick={props.increment}>Increment</button> */}
+                <button onClick={this.props.increment}>Increment</button>
+                <button onClick={this.props.decrement}>Decrement</button>
             </div >
         )
     }
 }
 
 const mapStateToProps = state => {
-    console.log('counter state', state)
-    console.log('counter state 2', state.count)
     return {
         count: state.count
     }
 }
 
+const mapDipachToProps = dispatch => {
+    return {
+      increment: () => dispatch({ type: "INCREMENT", value: 1 }),
+      decrement: () => dispatch({ type: "DECREMENT", value: 1 })
+    };
+  };
 
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, mapDipachToProps)(Counter);

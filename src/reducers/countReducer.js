@@ -1,20 +1,21 @@
 
 const initialState = {
-    count: 123
+    count: 12233
 };
 
-console.log('initialstate does counterreducer work', initialState.count)
-
 const countReducer = (state = initialState, action) => {
-    console.log('intitialState inside reducer', state)
-    console.log('reducre runnig', action)
-    return state;
-}
+    const newState = { ...state };
 
-// export const countNumber = (content) => {
-//     return {
-//         count: 123
-//     }
-// }
+    switch (action.type) {
+        case 'INCREMENT':
+            newState.count += action.value;
+            break;
+
+        case 'DECREMENT':
+            newState.count -= action.value;
+            break;
+    }
+    return newState;
+};
 
 export default countReducer

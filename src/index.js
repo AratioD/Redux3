@@ -6,9 +6,11 @@ import ConnectedCounter from './App'
 import countReducer from './reducers/countReducer'
 
 const reducer = combineReducers({
-    count: countReducer
-})
+    count: countReducer,
+    button: countReducer
 
+})
+// console.log(button)
 const store = createStore(countReducer)
 
 console.log('count index.js', store.getState())
