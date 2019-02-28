@@ -6,10 +6,11 @@ import { toggleImportanceOf } from '../reducers/countReducer'
 import { createStore } from 'redux'
 
 console.log('toimiiko component counter')
-export function Counter({value}) {
+export function Counter({ value }) {
     // const notes = store.getState().initialState
 
-    console.log('counter store', value)
+    // console.log('counter store', state)
+    // console.log('counter store', value.count)
     // console.log('store counter.js', store.getState())
     return (
         <div>
@@ -29,9 +30,11 @@ console.log('mapstatetoprops', mapStateToProps)
 
 // täällä on ongelma
 const mapStateToProps = state => {
-    console.log('counter state',state)
-    return {value: state.value };
-  };
+    console.log('counter state', state)
+    console.log('counter state 2', state.count)
+    return {
+        value: state.value
+    }
+};
 
-  const List = connect(mapStateToProps)(Counter);
-  export default List;
+export default connect(mapStateToProps)(Counter);
